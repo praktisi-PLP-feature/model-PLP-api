@@ -1,8 +1,34 @@
 # PERSONALIZED LEARNING PATH - PROJECT - FASTAPI 
-##### Submission akhir dari dicoding dengan salah satu dataset yaitu **Bike Sharing**, pada project ini diberlakukan analisis rental sepeda dan deployment menggunakan dashboard Streamlit, ada beberapa hal yang dilakukan dalam analisis seperti memahami data untuk menumbuhkan pertanyaan permasalahan, eksplorasi data, hingga visualisasi data untuk memenuhi pertanyaan yang telah ditentukan. Akses project pada link berikut : 
+##### API ini digunakan untuk memprediksi kategori bidang teknologi informasi yang paling relevan bagi seorang mahasiswa berdasarkan skor minat atau kemampuan. Model machine learning yang digunakan memberikan rekomendasi bidang beserta materi pembelajarannya.
 
-> link github_repo : https://github.com/anazantoro/dicoding-project-analisis-data <br>
-link colab_notebook : https://colab.research.google.com/drive/1iA_MlL4dHzPCdtOY8J_eaKohD-7K23yH?usp=sharing
+🛠️ Tech Stack
+FastAPI
+TensorFlow / Keras
+Pydantic
+fastAPI
+Uvicorn 
+Pytest 
+
+📂 Project Structure
+```
+plp-api/
+├── requirements.txt
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── data/
+│   │   └── materials.py
+│   ├── model/
+│   │   ├── model_loader.py
+│   │   ├── model.h5
+│   │   └── scaler.pkl
+│   ├── schemas/
+│   │   └── prediction.py
+│   ├── service/
+│   │   └── predictor.py
+│   └── tests/
+│       └── test_api.py
+```
 
 ## Clone Project
   Clone file project dari repository ini gunakan git clone
@@ -34,3 +60,43 @@ PYTHONPATH=. pytest tests/
   ```
   fastapi dev app/main.py
   ```
+  Server akan berjalan di:
+  http://127.0.0.1:8000/docs
+
+📤 API Usage
+Endpoint: /predict
+Method: POST
+Request Body (JSON):
+```
+json
+{
+    "uiux": 40,
+    "programming": 50,
+    "operational": 20,
+    "datascience": 30,
+    "cybersec": 80,
+    "qa": 70,
+    "network": 70
+}
+Response (Example):
+```
+
+```
+json
+{
+    "status": "success",
+    "threshold": 0.50,
+    "predictions": [
+        {
+            "category": "Cybersecurity",
+            "probability": 0.99,
+            "material": {
+                "title": "Step by step guide to becoming a Cyber Security",
+                "urls": [
+                    "https://roadmap.sh/cyber-security"
+                ]
+            }
+        }
+    ]
+}
+```
