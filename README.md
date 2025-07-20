@@ -64,11 +64,10 @@ PYTHONPATH=. pytest tests/
   http://127.0.0.1:8000/docs
 
 📤 API Usage
-Endpoint: /predict
-Method: POST
+Endpoint: /predict , Method: POST
+
 Request Body (JSON):
 ```
-json
 {
     "uiux": 40,
     "programming": 50,
@@ -78,11 +77,10 @@ json
     "qa": 70,
     "network": 70
 }
-Response (Example):
 ```
 
+Response (Example):
 ```
-json
 {
     "status": "success",
     "threshold": 0.50,
