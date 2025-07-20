@@ -5,7 +5,6 @@
 FastAPI
 TensorFlow / Keras
 Pydantic
-fastAPI
 Uvicorn 
 Pytest 
 
@@ -28,6 +27,16 @@ plp-api/
 │   │   └── predictor.py
 │   └── tests/
 │       └── test_api.py
+
+```
+🗒️requirements.txt (depedencies) : 
+```
+fastapi[standard]
+uvicorn
+scikit-learn
+tensorflow
+numpy
+joblib
 ```
 
 ## Clone Project
@@ -36,7 +45,7 @@ plp-api/
   git clone https://github.com/praktisi-PLP-feature/model-PLP-api
   ```
 
-## Setup Unittest
+## Setup Unittest - Bash
 Tetap di Root Project
 ```
 PYTHONPATH=. pytest tests/
@@ -45,7 +54,7 @@ PYTHONPATH=. pytest tests/
 ## Setup FastAPI - Bash
 1. Buat virtual environment
   ```
-  python -m venv venv
+  python -m venv .venv
   ```
 2. Aktivasi virtual environment
   ```
